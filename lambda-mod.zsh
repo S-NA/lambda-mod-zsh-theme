@@ -35,7 +35,7 @@ ${LAMBDA}\
  $(check_git_prompt_info)\
 %{$reset_color%}"
 
-RPROMPT="$(get_right_prompt)""
+RPROMPT="$(get_right_prompt)"
 
 # Format for git_prompt_info()
 ZSH_THEME_GIT_PROMPT_PREFIX="at %{$fg[blue]%} "
