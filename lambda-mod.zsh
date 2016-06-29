@@ -1,5 +1,7 @@
 #!/usr/bin/env zsh
 
+autoload -Uz colors && colors
+
 LAMBDA="%(?,%{$fg_bold[green]%}λ,%{$fg_bold[red]%}λ)"
 if [[ "$USER" == "root" ]]; then USERCOLOR="red"; else USERCOLOR="yellow"; fi
 
