@@ -1,6 +1,6 @@
 #!/usr/bin/env zsh
 
-source ./git.zsh
+source "$(dirname $0)/git.zsh"
 
 setopt prompt_subst
 autoload -Uz colors && colors
