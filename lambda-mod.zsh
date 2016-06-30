@@ -1,5 +1,6 @@
 #!/usr/bin/env zsh
 
+setopt prompt_subst
 autoload -Uz colors && colors
 
 local LAMBDA="%(?,%{$fg_bold[green]%}λ,%{$fg_bold[red]%}λ)"
@@ -30,15 +31,15 @@ function get_right_prompt() {
     fi
 }
 
-PS1="${LAMBDA}\
+PS1='${LAMBDA}\
  %{$fg_bold[$USERCOLOR]%}%n\
  %{$fg_no_bold[magenta]%}[%3~]\
  $(check_git_prompt_info)\
-%{$reset_color%}"
+%{$reset_color%}'
 
-PS2="… "
+PS2='… '
 
-RPROMPT="$(get_right_prompt)"
+RPROMPT='$(get_right_prompt)'
 
 # Format for git_prompt_info()
 ZSH_THEME_GIT_PROMPT_PREFIX="at %{$fg[blue]%} "
