@@ -2,7 +2,7 @@
 
 autoload -Uz colors && colors
 
-LAMBDA="%(?,%{$fg_bold[green]%}λ,%{$fg_bold[red]%}λ)"
+local LAMBDA="%(?,%{$fg_bold[green]%}λ,%{$fg_bold[red]%}λ)"
 if [[ "$USER" == "root" ]]; then USERCOLOR="red"; else USERCOLOR="yellow"; fi
 
 # Git sometimes goes into a detached head state. git_prompt_info doesn't
@@ -30,12 +30,13 @@ function get_right_prompt() {
     fi
 }
 
-PROMPT="
-${LAMBDA}\
+PS1="${LAMBDA}\
  %{$fg_bold[$USERCOLOR]%}%n\
  %{$fg_no_bold[magenta]%}[%3~]\
  $(check_git_prompt_info)\
 %{$reset_color%}"
+
+PS2="… "
 
 RPROMPT="$(get_right_prompt)"
 
